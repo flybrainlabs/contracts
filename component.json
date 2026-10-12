@@ -1,7 +1,7 @@
 {
   "schema": "flybrain-component-v1",
   "repository": "contracts",
-  "owner": "flybrainwork",
+  "owner": "flybrainlabs",
   "workspaceFiles": {
     "programs/flypow-campaign/Cargo.toml": "programs/flypow-campaign/Cargo.toml",
     "programs/flypow-campaign/src/lib.rs": "programs/flypow-campaign/src/lib.rs",
@@ -14,5 +14,6 @@
     "tools/migrate_economic_stage_v3.mjs": "tools/migrate_economic_stage_v3.mjs",
     "tools/setup_campaign.mjs": "tools/setup_campaign.mjs",
     "tools/start_localnet.sh": "tools/start_localnet.sh"
-  }
+  },
+  "project": "flybrainlabs"
 }
