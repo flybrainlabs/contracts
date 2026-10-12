@@ -1,0 +1,80 @@
+{
+  "schema": "flybrainlabs-wallet-v3-devnet-close-acceptance",
+  "checks": [
+    "Actual Devnet bank rejects miner result-close authority before broadcast",
+    "Project signature closes one dedicated Result to the fixed project wallet; the other 1024-byte Result remains readable",
+    "Actual finalized replay after closure creates no result, consumes no new rent and pays no duplicate token",
+    "Miner explicitly revokes and withdraws unused principal to the original wallet; consumed result rent stays separate"
+  ],
+  "close": {
+    "signature": "4EMVqATJTynm28y79X49yasDAzEhtPRLVhVQHxYfyv3vqKFYA4o4refr2uCRJEEMRkq6FDbFTgBXdA5cuVoSHUG6",
+    "slot": "510349808",
+    "feeLamports": "5000",
+    "computeUnits": 21153,
+    "commitment": "finalized",
+    "unit": "2DBSEaFpMtECJ6vA43UQKU5q3tRvM9rd6USLVgVCTJmf",
+    "result": "FGwuy9yKHb2cQTVdibMhFykshxSNEfeRbW8J1uW8DDVF",
+    "recipient": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+    "resultRentLamports": "5852160",
+    "projectNetLamports": "5847160"
+  },
+  "retainedResult": "CUwx4EwnmCQQPpzE2Wkoy5qFL7xdcKJ4mBvFJz7PS8Rv",
+  "unusedPrincipalLamports": "11704320",
+  "refund": {
+    "signature": "aq7Jn92ozH6QCaxcngNHUQTQY4u8njusGEanM5mQedU9DZjLrJsqqN2ATUhQwCoH88bjCjb8bK7H8QT7gRANKbt",
+    "slot": "510349857",
+    "feeLamports": "5000",
+    "computeUnits": 10073,
+    "commitment": "finalized",
+    "recipient": "7SUbJ626XGoYEKFMZUy7WnzfkX9McdJUaJqDtRQBqmEv",
+    "principalLamports": "11704320",
+    "minerNetLamports": "11699320"
+  },
+  "projectReceipts": {
+    "archive-certificate-0": {
+      "signature": "3AT48KnWzUAXGmdqN1Qtypk6CC2BuWYkK14XxG7WuZxgRfBjQ4vpGtJKEhjBBZnsPeLtp8q9s6hX8rwk5e9wnoJL",
+      "slot": "510349767",
+      "feeLamports": "10000",
+      "computeUnits": 19395,
+      "commitment": "finalized"
+    },
+    "archive-certificate-1": {
+      "signature": "36MKHyerEaZfPbhYLQjpMDLWzLCq9ZqbYgzuikyoBPGTQyGTVJpdTa9LQ8WpS1e1F3Y97zNoPnDAgyuMNfPVNofq",
+      "slot": "510349780",
+      "feeLamports": "10000",
+      "computeUnits": 19400,
+      "commitment": "finalized"
+    },
+    "project-close-first-result": {
+      "signature": "4EMVqATJTynm28y79X49yasDAzEhtPRLVhVQHxYfyv3vqKFYA4o4refr2uCRJEEMRkq6FDbFTgBXdA5cuVoSHUG6",
+      "slot": "510349808",
+      "feeLamports": "5000",
+      "computeUnits": 21153,
+      "commitment": "finalized"
+    }
+  },
+  "minerReceipts": {
+    "revoke-finite-grant": {
+      "signature": "3wDQWnbu9dAZCPX6Dz9gQxAC3q6zSnb3fzvjtXwPNKajgo4v883iwb4FZp9dGk4KF8HzQkJK9MewQyQJ8nLuewk7",
+      "slot": "510349842",
+      "feeLamports": "5000",
+      "computeUnits": 9649,
+      "commitment": "finalized"
+    },
+    "withdraw-unused-principal": {
+      "signature": "aq7Jn92ozH6QCaxcngNHUQTQY4u8njusGEanM5mQedU9DZjLrJsqqN2ATUhQwCoH88bjCjb8bK7H8QT7gRANKbt",
+      "slot": "510349857",
+      "feeLamports": "5000",
+      "computeUnits": 10073,
+      "commitment": "finalized"
+    }
+  },
+  "replayReceipt": {
+    "signature": "RRcKofewwPMsRm9wKnMadnnNbV78deDaPV3jhixtxzgVUPejjUUPR1sxQcxip6QaebADmVYyA3fbhSpfJp5BWa8",
+    "slot": "510349824",
+    "feeLamports": "5000",
+    "computeUnits": 30576,
+    "commitment": "finalized"
+  },
+  "passed": true
+}

@@ -7,6 +7,7 @@ use solana_program::{account_info::AccountInfo,clock::Clock,entrypoint::ProgramR
 use solana_system_interface::{instruction as sys,program as system};
 use spl_token::state::{Mint,Account as Token};
 type Key=[u8;32];
+mod mining_v3;
 #[derive(BorshSerialize,BorshDeserialize,Clone)]pub struct Global {pub authority:Key,pub network:Key,pub policy:Key,pub settlers:[Key;3],pub mint:Key,pub issued:bool,pub available:[u64;3]}
 #[derive(BorshSerialize,BorshDeserialize,Clone)]pub struct LegacyStage {pub id:Key,pub policy:Key,pub pool:u8,pub budget:u64,pub remaining:u64,pub deadline:i64,pub closed:bool}
 #[derive(BorshSerialize,BorshDeserialize,Clone)]pub struct Stage {pub id:Key,pub policy:Key,pub pool:u8,pub budget:u64,pub remaining:u64,pub deadline:i64,pub closed:bool,pub unaccepted_count:u64,pub unaccepted_atoms:u64}
@@ -23,6 +24,7 @@ type Key=[u8;32];
     CloseStage,
     Adopt{network:Key,policy:Key,settlers:[Key;3]},
     MigrateStage, // tag 9: admin supplies the complete non-released slot inventory.
+    MiningV3{data:Vec<u8>}, // tag 10: versioned funded discovery; old layouts stay intact.
 
 }
 #[cfg(not(feature="no-entrypoint"))]solana_program::entrypoint!(process_instruction);
@@ -69,10 +71,11 @@ fn transfer<'a>(p:&Pubkey,ga:&AccountInfo<'a>,source:&AccountInfo<'a>,dest:&Acco
 /// Signature domain also binds the program, chain identity, policy and frozen
 /// slot. Two keys can be one operator; that trust is disclosed separately.
 pub fn acceptance_message(p:&Pubkey,g:&Global,s:&Slot,evidence:Key,judgement:u8)->Vec<u8>{let mut out=b"Flybrain/economy-v2/accept\0".to_vec();out.extend(borsh::to_vec(&(p.to_bytes(),g.network,g.policy,s.stage,s.economic_task,s.unit,s.kind,s.contributor,s.beneficiary,s.amount,evidence,judgement)).unwrap());solana_program::hash::hash(&out).to_bytes().to_vec()}
-fn signature(sysvar:&AccountInfo,index:u16,message:&[u8])->Result<Key,ProgramError>{require(*sysvar.key==solana_program::sysvar::instructions::ID)?;let current=solana_program::sysvar::instructions::load_current_index_checked(sysvar)?;require(index<current)?;let ix=load_instruction_at_checked(index as usize,sysvar)?;require(ix.program_id==solana_program::ed25519_program::ID&&ix.accounts.is_empty())?;let d=&ix.data;require(d.len()>=16&&d[0]==1&&d[1]==0)?;let u=|o:usize|u16::from_le_bytes([d[o],d[o+1]]);require(u(4)==u16::MAX&&u(8)==u16::MAX&&u(14)==u16::MAX)?;let so=u(2) as usize;let ko=u(6) as usize;let mo=u(10) as usize;let len=u(12) as usize;require(so+64<=d.len()&&ko+32<=d.len()&&mo+len<=d.len()&&&d[mo..mo+len]==message)?;Ok(d[ko..ko+32].try_into().map_err(|_|bad())?)}
+fn signature(sysvar:&AccountInfo,index:u16,message:&[u8])->Result<Key,ProgramError>{require(*sysvar.key==solana_program::sysvar::instructions::ID)?;let current=solana_program::sysvar::instructions::load_current_index_checked(sysvar)?;require(index<current)?;let ix=load_instruction_at_checked(index as usize,sysvar)?;require(ix.program_id==solana_program::ed25519_program::ID&&ix.accounts.is_empty())?;let d=&ix.data;require(d.len()>=16&&d[0]==1&&d[1]==0)?;let u=|o:usize|u16::from_le_bytes([d[o],d[o+1]]);require(u(4)==u16::MAX&&u(8)==u16::MAX&&u(14)==u16::MAX)?;let so=u(2) as usize;let ko=u(6) as usize;let mo=u(10) as usize;let len=u(12) as usize;require(so>=16&&ko>=16&&mo>=16&&len==message.len()&&so+64<=d.len()&&ko+32<=d.len()&&mo+len<=d.len()&&&d[mo..mo+len]==message)?;require((so+64<=ko||ko+32<=so)&&(so+64<=mo||mo+len<=so)&&(ko+32<=mo||mo+len<=ko))?;Ok(d[ko..ko+32].try_into().map_err(|_|bad())?)}
 pub fn process_instruction(p:&Pubkey,a:&[AccountInfo],data:&[u8])->ProgramResult{
     let instruction=Instruction::try_from_slice(data).map_err(|_|bad())?;
     match instruction {
+        Instruction::MiningV3{data}=>mining_v3::process(p,a,&data),
         Instruction::Init{network,policy,settlers}=>{
             require(a.len()==9&&network!=[0;32]&&policy!=[0;32]&&settlers.iter().all(|k|*k!=[0;32])&&settlers[0]!=settlers[1]&&settlers[0]!=settlers[2]&&settlers[1]!=settlers[2])?;
             let (ga,ma,payer,sy,ta)=(&a[0],&a[1],&a[5],&a[6],&a[7]);require(*ta.key==spl_token::ID)?;initializer(p,payer,&a[8])?;

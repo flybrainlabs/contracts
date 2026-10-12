@@ -1,0 +1,13 @@
+{
+  "schema": "flybrainlabs-wallet-mining-program-v3",
+  "cluster": "devnet",
+  "genesisHash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "programId": "5yxjnH1PSk8iQKfK3ejG4jfSkewkTKfcpJygojdb6sam",
+  "programData": "GmTNV9aBMjWeEEsZxBhRAFhahFu2ivUssy1MdHVXam64",
+  "programBytes": 286616,
+  "programSha256": "a42cd5db781b2675ce60e6c215e0e60918114351f5733a8c041174a6f0069b7b",
+  "upgradeAuthority": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+  "deployedSlot": "510339148",
+  "projectBalanceLamports": "8421357840",
+  "commitment": "finalized"
+}

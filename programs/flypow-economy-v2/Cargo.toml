@@ -13,3 +13,4 @@ solana-system-interface = { version = "=2.0.0", features = ["bincode"] }
 spl-token = { version = "=9.0.0", features = ["no-entrypoint"] }
 borsh = { version = "=1.8.1", features = ["derive"] }
 flypow-economic-core = { path = "../../crates/economic-core" }
+flybrainlabs-mining-v3 = { path = "../../crates/mining-v3" }

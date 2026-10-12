@@ -8,8 +8,11 @@
     "programs/flypow-campaign/src/lib.rs": "programs/flypow-campaign/src/lib.rs",
     "programs/flypow-economy-v2/Cargo.toml": "programs/flypow-economy-v2/Cargo.toml",
     "programs/flypow-economy-v2/src/lib.rs": "programs/flypow-economy-v2/src/lib.rs",
+    "programs/flypow-economy-v2/src/mining_v3.rs": "programs/flypow-economy-v2/src/mining_v3.rs",
     "tests/campaign_localnet.mjs": "tests/campaign_localnet.mjs",
     "tests/economy_v2_localnet.mjs": "tests/economy_v2_localnet.mjs",
+    "tests/mining_v3_bounds.mjs": "tests/mining_v3_bounds.mjs",
+    "tests/mining_v3_localnet.mjs": "tests/mining_v3_localnet.mjs",
     "tools/agave-localnet-sync-io.patch": "tools/agave-localnet-sync-io.patch",
     "tools/deploy_localnet.sh": "tools/deploy_localnet.sh",
     "tools/fbw-devnet/README.md": "tools/fbw-devnet/README.md",
@@ -18,7 +21,17 @@
     "tools/fbw-devnet/package.json": "tools/fbw-devnet/package.json",
     "tools/migrate_economic_stage_v3.mjs": "tools/migrate_economic_stage_v3.mjs",
     "tools/setup_campaign.mjs": "tools/setup_campaign.mjs",
-    "tools/start_localnet.sh": "tools/start_localnet.sh"
+    "tools/start_localnet.sh": "tools/start_localnet.sh",
+    "tools/initialize_wallet_mining_v3.mjs": "tools/initialize_wallet_mining_v3.mjs",
+    "tests/wallet_v3_close_devnet.mjs": "tests/wallet_v3_close_devnet.mjs",
+    "deploy/wallet-mining-v3/local-sbf-acceptance.json": "deploy/wallet-mining-v3/local-sbf-acceptance.json",
+    "deploy/wallet-mining-v3/future-scientific-plan.json": "deploy/wallet-mining-v3/future-scientific-plan.json",
+    "deploy/wallet-mining-v3/frozen-plan.json": "deploy/wallet-mining-v3/frozen-plan.json",
+    "deploy/wallet-mining-v3/local-sbf-bounds.json": "deploy/wallet-mining-v3/local-sbf-bounds.json",
+    "deploy/wallet-mining-v3/acceptance.json": "deploy/wallet-mining-v3/acceptance.json",
+    "deploy/wallet-mining-v3/initialization.json": "deploy/wallet-mining-v3/initialization.json",
+    "deploy/wallet-mining-v3/program.json": "deploy/wallet-mining-v3/program.json",
+    "deploy/wallet-mining-v3/close-acceptance.json": "deploy/wallet-mining-v3/close-acceptance.json"
   },
   "project": "flybrainlabs"
 }
