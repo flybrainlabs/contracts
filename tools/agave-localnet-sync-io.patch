@@ -1,0 +1,187 @@
+diff --git a/accounts-db/src/account_storage_reader.rs b/accounts-db/src/account_storage_reader.rs
+index d03ba03..80f8b3b 100644
+--- a/accounts-db/src/account_storage_reader.rs
++++ b/accounts-db/src/account_storage_reader.rs
+@@ -16,16 +16,13 @@ use {
+ // file fits entirely within the buffer.
+ pub const ACCOUNT_STORAGE_MAX_BUFFER_SIZE: usize = 10 * 1024 * 1024;
+ 
+-#[cfg(not(target_os = "linux"))]
+ const READER_STACK_BUFFER_SIZE: usize = 64 * 1024;
+ 
+ /// Concrete reader type returned by [`storage_file_buf_reader`].
+ ///
+ /// The concrete type is exposed (rather than `impl FileBufRead<'a>`) so callers
+ /// can use inherent methods like `rebind`.
+-#[cfg(target_os = "linux")]
+-type StorageFileBufReader<'a> = buffered_reader::SequentialFileReader<'a>;
+-#[cfg(not(target_os = "linux"))]
++// LOCALNET TEST HOST ONLY: preserve account bytes with the existing standard reader.
+ type StorageFileBufReader<'a> = buffered_reader::BufferedReader<'a, READER_STACK_BUFFER_SIZE>;
+ 
+ /// When `use_page_cache` is `true`, direct I/O is forced off regardless of
+@@ -36,19 +33,8 @@ pub fn storage_file_buf_reader<'a>(
+     use_page_cache: bool,
+     io_setup: &IoSetupState,
+ ) -> io::Result<StorageFileBufReader<'a>> {
+-    #[cfg(target_os = "linux")]
+-    {
+-        buffered_reader::SequentialFileReaderBuilder::new()
+-            .shared_sqpoll(io_setup.shared_sqpoll_fd())
+-            .use_direct_io(io_setup.use_direct_io && !use_page_cache)
+-            .use_registered_buffers(io_setup.use_registered_io_uring_buffers)
+-            .build(max_buf_size)
+-    }
+-    #[cfg(not(target_os = "linux"))]
+-    {
+-        let _ = (max_buf_size, use_page_cache, io_setup);
+-        Ok(StorageFileBufReader::new())
+-    }
++    let _ = (max_buf_size, use_page_cache, io_setup);
++    Ok(StorageFileBufReader::new())
+ }
+ 
+ /// Lazy iterator yielding a file handle for each storage suitable for
+@@ -57,9 +43,10 @@ pub fn open_storage_files<'s>(
+     storages: impl IntoIterator<Item = &'s AccountStorageEntry> + 's,
+     use_direct_io: bool,
+ ) -> impl Iterator<Item = io::Result<OpenFileForArchive<'s>>> + 's {
++    let _ = use_direct_io;
+     storages
+         .into_iter()
+-        .map(move |storage| storage.accounts.open_file_for_archive(use_direct_io))
++        .map(move |storage| storage.accounts.open_file_for_archive(false))
+ }
+ 
+ /// Should tombstones be included or excluded when reading from storage?
+diff --git a/fs/src/buffered_reader.rs b/fs/src/buffered_reader.rs
+index f6ea876..41c4051 100644
+--- a/fs/src/buffered_reader.rs
++++ b/fs/src/buffered_reader.rs
+@@ -461,25 +461,9 @@ pub fn large_file_buf_reader(
+     buf_size: usize,
+     io_setup: &IoSetupState,
+ ) -> io::Result<impl BufRead + use<>> {
+-    #[cfg(target_os = "linux")]
+-    {
+-        assert!(agave_io_uring::io_uring_supported());
+-
+-        let mut reader = SequentialFileReaderBuilder::new()
+-            .shared_sqpoll(io_setup.shared_sqpoll_fd())
+-            .use_direct_io(io_setup.use_direct_io)
+-            .use_registered_buffers(io_setup.use_registered_io_uring_buffers)
+-            .build(buf_size)?;
+-        reader.set_path(path)?;
+-        Ok(reader)
+-    }
+-    #[cfg(not(target_os = "linux"))]
+-    {
+-        use std::io::BufReader;
+-        let file = File::open(path)?;
+-        let _ = io_setup;
+-        Ok(BufReader::with_capacity(buf_size, file))
+-    }
++    // LOCALNET TEST HOST ONLY: standard buffered reads where io_uring is denied.
++    let _ = io_setup;
++    Ok(io::BufReader::with_capacity(buf_size, File::open(path)?))
+ }
+ 
+ #[cfg(test)]
+diff --git a/fs/src/buffered_writer.rs b/fs/src/buffered_writer.rs
+index e210fac..75c9d0e 100644
+--- a/fs/src/buffered_writer.rs
++++ b/fs/src/buffered_writer.rs
+@@ -3,65 +3,14 @@ use {
+     std::{fs, io, path::Path},
+ };
+ 
+-/// Default buffer size for IO uring. This is a multiple of the default write size to allow
+-/// multiple writes to be in flight at the same time.
+-#[cfg(target_os = "linux")]
+-const DEFAULT_IO_URING_BUFFER_SIZE: usize =
+-    4 * crate::io_uring::file_creator::DEFAULT_WRITE_SIZE as usize;
+-
+-/// Default buffer size for writing large files to disks with `BufWriter`. Since `BufWriter` does not do
+-/// background writing, this size is set above minimum reasonable SSD write sizes to also reduce
+-/// number of syscalls.
+-#[cfg(not(target_os = "linux"))]
+-const DEFAULT_BUF_WRITER_BUFFER_SIZE: usize = 2 * 1024 * 1024;
+-
+-/// Return a buffered writer for creating a new file at `path`
+-///
+-/// The returned writer is using a buffer size tuned for writing large files to disks.
+-/// `io_setup` controls the I/O configuration (e.g. direct I/O, shared sqpoll).
++// LOCALNET TEST HOST ONLY: containers may disallow io_uring. Preserve file
++// bytes with the standard synchronous writer; no consensus/runtime changes.
+ pub fn large_file_buf_writer(
+     path: impl AsRef<Path>,
+     io_setup: &IoSetupState,
+ ) -> io::Result<impl io::Write> {
+-    #[cfg(target_os = "linux")]
+-    {
+-        assert!(agave_io_uring::io_uring_supported());
+-        use {
+-            crate::io_uring::{
+-                file_creator::IoUringFileCreatorBuilder, file_writer::IoUringFileWriter,
+-            },
+-            std::sync::Arc,
+-        };
+-
+-        let file_creator = IoUringFileCreatorBuilder::new()
+-            .use_registered_buffers(io_setup.use_registered_io_uring_buffers)
+-            .write_with_direct_io(io_setup.use_direct_io)
+-            .shared_sqpoll(io_setup.shared_sqpoll_fd())
+-            .build(DEFAULT_IO_URING_BUFFER_SIZE, |_| None)?;
+-
+-        IoUringFileWriter::new(
+-            file_creator,
+-            path.as_ref().to_path_buf(),
+-            0o666,
+-            Arc::new(fs::File::open(path.as_ref().parent().ok_or(
+-                io::Error::new(
+-                    io::ErrorKind::InvalidInput,
+-                    "expected path to an output file that has a parent directory",
+-                ),
+-            )?)?),
+-        )
+-    }
+-
+-    #[cfg(not(target_os = "linux"))]
+-    {
+-        let _ = io_setup;
+-        let file = fs::File::create(path)?;
+-
+-        Ok(io::BufWriter::with_capacity(
+-            DEFAULT_BUF_WRITER_BUFFER_SIZE,
+-            file,
+-        ))
+-    }
++    let _ = io_setup;
++    Ok(io::BufWriter::with_capacity(2 * 1024 * 1024, fs::File::create(path)?))
+ }
+ 
+ /// A writer that enforces a hard byte-count limit on the wrapped writer.
+diff --git a/fs/src/dirs.rs b/fs/src/dirs.rs
+index cb8e684..1e3094f 100644
+--- a/fs/src/dirs.rs
++++ b/fs/src/dirs.rs
+@@ -9,8 +9,7 @@ use {crate::io_uring::dir_remover::RingDirRemover, agave_io_uring::io_uring_supp
+ pub fn remove_dir_all(path: impl Into<PathBuf> + AsRef<Path>) -> io::Result<()> {
+     #[cfg(target_os = "linux")]
+     {
+-        assert!(io_uring_supported());
+-        if let Ok(mut remover) = RingDirRemover::new() {
++        if io_uring_supported() && let Ok(mut remover) = RingDirRemover::new() {
+             return remover.remove_dir_all(path);
+         }
+     }
+@@ -24,8 +23,7 @@ pub fn remove_dir_contents(path: impl AsRef<Path>) {
+ 
+     #[cfg(target_os = "linux")]
+     {
+-        assert!(io_uring_supported());
+-        if let Ok(mut remover) = RingDirRemover::new() {
++        if io_uring_supported() && let Ok(mut remover) = RingDirRemover::new() {
+             if let Err(e) = remover.remove_dir_contents(path) {
+                 log::warn!("Failed to delete contents of '{}': {e}", path.display());
+             }

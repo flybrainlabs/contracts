@@ -1,0 +1,18 @@
+{
+  "schema": "flybrain-component-v1",
+  "repository": "contracts",
+  "owner": "flybrainwork",
+  "workspaceFiles": {
+    "programs/flypow-campaign/Cargo.toml": "programs/flypow-campaign/Cargo.toml",
+    "programs/flypow-campaign/src/lib.rs": "programs/flypow-campaign/src/lib.rs",
+    "programs/flypow-economy-v2/Cargo.toml": "programs/flypow-economy-v2/Cargo.toml",
+    "programs/flypow-economy-v2/src/lib.rs": "programs/flypow-economy-v2/src/lib.rs",
+    "tests/campaign_localnet.mjs": "tests/campaign_localnet.mjs",
+    "tests/economy_v2_localnet.mjs": "tests/economy_v2_localnet.mjs",
+    "tools/agave-localnet-sync-io.patch": "tools/agave-localnet-sync-io.patch",
+    "tools/deploy_localnet.sh": "tools/deploy_localnet.sh",
+    "tools/migrate_economic_stage_v3.mjs": "tools/migrate_economic_stage_v3.mjs",
+    "tools/setup_campaign.mjs": "tools/setup_campaign.mjs",
+    "tools/start_localnet.sh": "tools/start_localnet.sh"
+  }
+}
