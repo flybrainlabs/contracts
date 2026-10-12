@@ -1,0 +1,59 @@
+{
+  "schema": "flybrainlabs-fbw-devnet-v1",
+  "project": "flybrainlabs",
+  "network": "devnet",
+  "genesisHash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "name": "flybrainwork",
+  "symbol": "FBW",
+  "decimals": 8,
+  "mint": "HCdV49RkqtC7pPwzHCYg5KtkmU8opifjojLbAyZXKgQW",
+  "owner": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+  "capAtoms": "31183324300000000",
+  "policySha256": "9fb2693dc2ffa88d2e9cc777e506152c2ca3f29221a875b1e1db1e98130eac70",
+  "metadataUri": "https://flybrain.work/assets/brand/fbw-devnet-v1.json",
+  "pools": {
+    "miners": {
+      "address": "832dsxLS5nDfWcrMnvmtSJdtcCbgnvSDgfsGA2nyzhpa",
+      "atoms": "22451993600000000"
+    },
+    "verifiers": {
+      "address": "5EZzasix65JZaqPq84wA62BmXm4dDyMwFvUH62aCLSnt",
+      "atoms": "5612998400000000"
+    },
+    "community": {
+      "address": "GwH8qUCfJ6nvaQow8TSPy93nm69G6QxxVS17T998rmVG",
+      "atoms": "3118332300000000"
+    }
+  },
+  "rpc": "https://api.devnet.solana.com",
+  "image": "https://flybrain.work/assets/brand/flybrainlabs-logo-v1-500.png",
+  "totalSupply": "311833243",
+  "sourcePolicyId": "flybrain-global-supply-v2-20261011",
+  "sourcePolicyAssetSymbol": "FLY",
+  "custody": "Three separate Devnet token accounts controlled by the supplied test wallet; not service-contract escrow",
+  "explorer": "https://explorer.solana.com/address/HCdV49RkqtC7pPwzHCYg5KtkmU8opifjojLbAyZXKgQW?cluster=devnet",
+  "transactions": {
+    "create-mint-and-pools": {
+      "signature": "3jUPVqBsVpe54rUZnxCu7toFceSK95GFSZDGYDTWWzsQa1VZ9JAKCp8TS8QwFP9E6din8myRk7Kq5A2jD5aJHZV5",
+      "status": "finalized"
+    },
+    "metadata-and-fixed-supply": {
+      "signature": "2EAhCGfbdVXQ8JBdy1rA6ZPP2ut6GLWeizzXTm23964x4MJAsYfGhEq9bSxFAFwmSnfHD4NtuvJgZr6wyTVVBjDY",
+      "status": "finalized"
+    }
+  },
+  "verification": {
+    "finalized": true,
+    "exactSupply": true,
+    "exactPools": true,
+    "decimals": 8,
+    "mintAuthorityRevoked": true,
+    "freezeAuthority": null,
+    "metadataAccount": "Dt4YQ9NmmUM9jLfg9Na4z63b2dUjfJe9XYas4d9wrLsU",
+    "metadataName": "flybrainwork",
+    "metadataSymbol": "FBW",
+    "metadataUri": "https://flybrain.work/assets/brand/fbw-devnet-v1.json",
+    "tokenStandard": "Fungible",
+    "metadataUpdateAuthority": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE"
+  }
+}

@@ -3,6 +3,7 @@
   "repository": "contracts",
   "owner": "flybrainlabs",
   "workspaceFiles": {
+    "deploy/fbw-devnet.json": "deploy/fbw-devnet.json",
     "programs/flypow-campaign/Cargo.toml": "programs/flypow-campaign/Cargo.toml",
     "programs/flypow-campaign/src/lib.rs": "programs/flypow-campaign/src/lib.rs",
     "programs/flypow-economy-v2/Cargo.toml": "programs/flypow-economy-v2/Cargo.toml",
@@ -11,6 +12,10 @@
     "tests/economy_v2_localnet.mjs": "tests/economy_v2_localnet.mjs",
     "tools/agave-localnet-sync-io.patch": "tools/agave-localnet-sync-io.patch",
     "tools/deploy_localnet.sh": "tools/deploy_localnet.sh",
+    "tools/fbw-devnet/README.md": "tools/fbw-devnet/README.md",
+    "tools/fbw-devnet/create_token.mjs": "tools/fbw-devnet/create_token.mjs",
+    "tools/fbw-devnet/package-lock.json": "tools/fbw-devnet/package-lock.json",
+    "tools/fbw-devnet/package.json": "tools/fbw-devnet/package.json",
     "tools/migrate_economic_stage_v3.mjs": "tools/migrate_economic_stage_v3.mjs",
     "tools/setup_campaign.mjs": "tools/setup_campaign.mjs",
     "tools/start_localnet.sh": "tools/start_localnet.sh"
