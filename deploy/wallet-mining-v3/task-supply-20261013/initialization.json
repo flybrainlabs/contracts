@@ -1,0 +1,183 @@
+{
+  "schema": "flybrainlabs-wallet-mining-initialization-v3",
+  "testOnly": true,
+  "plan": {
+    "schema": "flybrainlabs-wallet-mining-plan-v3",
+    "testOnly": true,
+    "formalEmissionPromise": false,
+    "cluster": "devnet",
+    "genesisHash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+    "programId": "5yxjnH1PSk8iQKfK3ejG4jfSkewkTKfcpJygojdb6sam",
+    "mint": "HCdV49RkqtC7pPwzHCYg5KtkmU8opifjojLbAyZXKgQW",
+    "symbol": "FBW",
+    "decimals": 8,
+    "capAtoms": "31183324300000000",
+    "pools": {
+      "miners": "22451993600000000",
+      "verifiers": "5612998400000000",
+      "community": "3118332300000000"
+    },
+    "stageId": "943cb525b5b948086d530fe3ec9249da9dc1e3e691317855f1fd283d31490ffa",
+    "deadline": "1791966623",
+    "budgetAtoms": "200000000",
+    "unitRewardBasis": "two unused independently selected and calibrated full-model goals; one FBW each; finite Devnet user task-supply plan",
+    "units": [
+      {
+        "goalId": "ae6d454b48ffde3793e5cc3951a99c7f197f3e5f0262741287e54550bee939da",
+        "scientificTaskId": "9a8be98af5662997c5206d6604136806b87367bf25d455231eb08e26e24a6076",
+        "economicTaskId": "9a8be98af5662997c5206d6604136806b87367bf25d455231eb08e26e24a6076",
+        "rewardAtoms": "100000000",
+        "unitId": "0000000000000000000000000000000000000000000000000000000000000000",
+        "kind": "discovery",
+        "unitPda": "7M7T7nuiS4ApAX3hA5QeaokGRaCmiqhBPVFXWeBqn9gN"
+      },
+      {
+        "goalId": "2be3c6fcc9ae852afaa9b981332592eda960de29e69b71a90c625602ae6bbe86",
+        "scientificTaskId": "e91c163a9ec34abbf01131e5ca827f4ed7d573c10560854a1c4fc8b79f6047d5",
+        "economicTaskId": "e91c163a9ec34abbf01131e5ca827f4ed7d573c10560854a1c4fc8b79f6047d5",
+        "rewardAtoms": "100000000",
+        "unitId": "0000000000000000000000000000000000000000000000000000000000000000",
+        "kind": "discovery",
+        "unitPda": "EYZArDwC7n7WaypZ6k8EBbkDNRUKsUPMk2nwKnp1uB8N"
+      }
+    ],
+    "project": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+    "relayer": "5qxz9Aqd8fDuwRYgX16igmMoJUfkE5SKsLGw3YqaRArq",
+    "settlers": [
+      "7KRg8JRzjhXpov24M23Qy65LNmg9VzAhE9xjJp8vRpCX",
+      "FEyUjqjjtEnWdDw5JAkawBAPT25n2uxsRCeAcWWnhqnM",
+      "28uL2offEYRXv7TiduU2mggRz91NrPfJswRGYU8kijEF"
+    ],
+    "quorum": 2,
+    "verificationRewardAtoms": "0",
+    "remainderRecipient": "original miner pool",
+    "issuance": "adopt once-issued FBW; never Issue again",
+    "retentionSeconds": "60",
+    "maxGrantLifetimeSeconds": "14400",
+    "maxDepositLamports": "100000000",
+    "maxTransactions": 9,
+    "relayerFundingLamports": "0",
+    "minerAcceptanceFundingLamports": "0",
+    "independentOperators": 1,
+    "upgradeAuthority": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+    "policyHash": "903aeb72963be0fbe7249e0fc72e6580ad341064225beae5049411e91358c97c",
+    "global": "Ghp9dnWcW6zKCvV5fFjiKHcsEVkE84Umr3xQpeC8cBgR",
+    "stage": "PKG52R51QHcTS2ENH4jJJUpDawnvEVsUVK1DCNXFHuG",
+    "vaults": [
+      "ExeurEj8f59rLbLt7NRbMvps5aoHwMY8MKXbyGV7Eaqs",
+      "GvdAPG57nqjuZ33P4rncNR34RuG5b13iRnQyFyxSkwfs",
+      "2nf4mZqPQM4BSg7CMTQY5KqEKi1Eg73wbHTVU2h7soor"
+    ],
+    "renewalOnly": true,
+    "maxFeesLamports": 100000
+  },
+  "stage": {
+    "id": {
+      "type": "Buffer",
+      "data": [
+        148,
+        60,
+        181,
+        37,
+        181,
+        185,
+        72,
+        8,
+        109,
+        83,
+        15,
+        227,
+        236,
+        146,
+        73,
+        218,
+        157,
+        193,
+        227,
+        230,
+        145,
+        49,
+        120,
+        85,
+        241,
+        253,
+        40,
+        61,
+        49,
+        73,
+        15,
+        250
+      ]
+    },
+    "policy": {
+      "type": "Buffer",
+      "data": [
+        144,
+        58,
+        235,
+        114,
+        150,
+        59,
+        224,
+        251,
+        231,
+        36,
+        158,
+        15,
+        199,
+        46,
+        101,
+        128,
+        173,
+        52,
+        16,
+        100,
+        34,
+        91,
+        234,
+        229,
+        4,
+        148,
+        17,
+        233,
+        19,
+        88,
+        201,
+        124
+      ]
+    },
+    "budget": "200000000",
+    "remaining": "0",
+    "pendingUnits": "2",
+    "pendingAtoms": "200000000",
+    "acceptedUnpaid": "0",
+    "paid": "0",
+    "deadline": "1791966623",
+    "closed": false
+  },
+  "receipts": {
+    "freeze-test-stage": {
+      "signature": "5uVCBzwGYbqUdzM74CK15zbnjVn7jFp2bC5PdAFbjKm4GhGY77J33L4ayqDNYEkB41xiHwK86yei3a5ChkqH2NhY",
+      "slot": "510567777",
+      "feeLamports": "5000",
+      "computeUnits": 19682,
+      "commitment": "finalized"
+    },
+    "reserve-9a8be98af5662997c5206d6604136806b87367bf25d455231eb08e26e24a6076": {
+      "signature": "u9Qm5M8T2WhPzjQ4xNnXEhJo2ppSaoB8vvhUjetYN4UQje162CxKCJ4fYGE8NkiEpVE6UCrLvqAzNJNBGtQyWcy",
+      "slot": "510567790",
+      "feeLamports": "5000",
+      "computeUnits": 22644,
+      "commitment": "finalized"
+    },
+    "reserve-e91c163a9ec34abbf01131e5ca827f4ed7d573c10560854a1c4fc8b79f6047d5": {
+      "signature": "529Lxc7kBfPGP7XrB4rQGpBjBkdX3jxjapbwHkz7eyaiA2fEf2wiHib677EqCNHkLYN4AL5Vf96MkpU48P4pACFY",
+      "slot": "510567808",
+      "feeLamports": "5000",
+      "computeUnits": 24144,
+      "commitment": "finalized"
+    }
+  },
+  "projectBalanceLamports": "8068443360",
+  "commitment": "finalized"
+}

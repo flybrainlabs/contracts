@@ -1,0 +1,70 @@
+{
+  "schema": "flybrainlabs-wallet-mining-plan-v3",
+  "testOnly": true,
+  "formalEmissionPromise": false,
+  "cluster": "devnet",
+  "genesisHash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "programId": "5yxjnH1PSk8iQKfK3ejG4jfSkewkTKfcpJygojdb6sam",
+  "mint": "HCdV49RkqtC7pPwzHCYg5KtkmU8opifjojLbAyZXKgQW",
+  "symbol": "FBW",
+  "decimals": 8,
+  "capAtoms": "31183324300000000",
+  "pools": {
+    "miners": "22451993600000000",
+    "verifiers": "5612998400000000",
+    "community": "3118332300000000"
+  },
+  "stageId": "943cb525b5b948086d530fe3ec9249da9dc1e3e691317855f1fd283d31490ffa",
+  "deadline": "1791966623",
+  "budgetAtoms": "200000000",
+  "unitRewardBasis": "two unused independently selected and calibrated full-model goals; one FBW each; finite Devnet user task-supply plan",
+  "units": [
+    {
+      "goalId": "ae6d454b48ffde3793e5cc3951a99c7f197f3e5f0262741287e54550bee939da",
+      "scientificTaskId": "9a8be98af5662997c5206d6604136806b87367bf25d455231eb08e26e24a6076",
+      "economicTaskId": "9a8be98af5662997c5206d6604136806b87367bf25d455231eb08e26e24a6076",
+      "rewardAtoms": "100000000",
+      "unitId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "discovery",
+      "unitPda": "7M7T7nuiS4ApAX3hA5QeaokGRaCmiqhBPVFXWeBqn9gN"
+    },
+    {
+      "goalId": "2be3c6fcc9ae852afaa9b981332592eda960de29e69b71a90c625602ae6bbe86",
+      "scientificTaskId": "e91c163a9ec34abbf01131e5ca827f4ed7d573c10560854a1c4fc8b79f6047d5",
+      "economicTaskId": "e91c163a9ec34abbf01131e5ca827f4ed7d573c10560854a1c4fc8b79f6047d5",
+      "rewardAtoms": "100000000",
+      "unitId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "discovery",
+      "unitPda": "EYZArDwC7n7WaypZ6k8EBbkDNRUKsUPMk2nwKnp1uB8N"
+    }
+  ],
+  "project": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+  "relayer": "5qxz9Aqd8fDuwRYgX16igmMoJUfkE5SKsLGw3YqaRArq",
+  "settlers": [
+    "7KRg8JRzjhXpov24M23Qy65LNmg9VzAhE9xjJp8vRpCX",
+    "FEyUjqjjtEnWdDw5JAkawBAPT25n2uxsRCeAcWWnhqnM",
+    "28uL2offEYRXv7TiduU2mggRz91NrPfJswRGYU8kijEF"
+  ],
+  "quorum": 2,
+  "verificationRewardAtoms": "0",
+  "remainderRecipient": "original miner pool",
+  "issuance": "adopt once-issued FBW; never Issue again",
+  "retentionSeconds": "60",
+  "maxGrantLifetimeSeconds": "14400",
+  "maxDepositLamports": "100000000",
+  "maxTransactions": 9,
+  "relayerFundingLamports": "0",
+  "minerAcceptanceFundingLamports": "0",
+  "independentOperators": 1,
+  "upgradeAuthority": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+  "policyHash": "903aeb72963be0fbe7249e0fc72e6580ad341064225beae5049411e91358c97c",
+  "global": "Ghp9dnWcW6zKCvV5fFjiKHcsEVkE84Umr3xQpeC8cBgR",
+  "stage": "PKG52R51QHcTS2ENH4jJJUpDawnvEVsUVK1DCNXFHuG",
+  "vaults": [
+    "ExeurEj8f59rLbLt7NRbMvps5aoHwMY8MKXbyGV7Eaqs",
+    "GvdAPG57nqjuZ33P4rncNR34RuG5b13iRnQyFyxSkwfs",
+    "2nf4mZqPQM4BSg7CMTQY5KqEKi1Eg73wbHTVU2h7soor"
+  ],
+  "renewalOnly": true,
+  "maxFeesLamports": 100000
+}
