@@ -1,0 +1,138 @@
+{
+  "schema": "flybrainlabs-task-catalog-plan-v4",
+  "approval": {
+    "approved": true,
+    "evidenceHash": "e243cf7390f681e22743270e9b683c616985d0c5da2f61b8c235aa40be8acf7a"
+  },
+  "cluster": "devnet",
+  "genesisHash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "programId": "5yxjnH1PSk8iQKfK3ejG4jfSkewkTKfcpJygojdb6sam",
+  "mint": "HCdV49RkqtC7pPwzHCYg5KtkmU8opifjojLbAyZXKgQW",
+  "policyHash": "903aeb72963be0fbe7249e0fc72e6580ad341064225beae5049411e91358c97c",
+  "factoryId": "c7baf1fefe9ac002a648ed029b6fc03e56001294bc67530a1ef7d161351b3930",
+  "budgetAtoms": "160000000000",
+  "deadline": "1794639131",
+  "excludedScientificIdentities": [
+    "0b08a0d8d95147be703f44f251306db314821e0579bd965803a020235bf92aba",
+    "0f70071d05d6376e2cdf2133de6c48562683bf19aa30e57da94d5a6371ec06df",
+    "19092b94ff6e3aff0c9cd7fa03c7a6a114c201b1176ac5f1f4604fe4ea20fd5b",
+    "21b13aed2f72afcd634ed41d22cda2fe8f180f2e5e1956e6293d0a5bc158a6b2",
+    "3e05b04139d4f3455880b2d66eb465918c50e9f4ee9c13198aa2da4f22ab599f",
+    "47ebacbe92355fd38ab842b786cc3c353f49ae7531d2675b01d2504797c5b2bf",
+    "4f97858df81bf99f84509431e53ae81c4e45cd271159d19272cfbbdf6bc59386",
+    "4fb556c011082390f6fc52b5d43d81e10945b59ee0d3b8307588c99b544d3823",
+    "578151493a5c48849f66eca377faa8f926fec27207aad3e44dabf71db228aa3a",
+    "689e20328b3a005abad73e55ba3dfb4f04eb200e2ba85e6a53d9137939a54736",
+    "725ad82847bde8de0d4a59fdaf02f19f03d1f050ac896daee1cc45094b6f500f",
+    "79caa4c366f94267e0687f9a7b66e1d5b24d00c06df48099f42e70f2b032f2f5",
+    "79ceb722ae44cc4f61622a9c98a187b5b51bea9eca5609f8c5feac91394278df",
+    "838c919c95aaeafe17dffc9266b29e4d1b6486abbd4f132119743a72d1c5b6e7",
+    "96e5e81ef320447391a7df7c0aad8c0daa1e7b382e2ced5992869b02106174a1",
+    "9a8be98af5662997c5206d6604136806b87367bf25d455231eb08e26e24a6076",
+    "a4a88ba12634c44dedbc6b7f9b2d0cea33e71859f3b8dca96f426b7ee37c6c35",
+    "b4e84b1a7934e24d4083a32e0245f08d818263b9e6d7e22a49474d0dd20e696d",
+    "b9d6d85fce394e37f5c5b17772def653f21a7efd02c33012c7d2e060d9a415a8",
+    "c5c4ecb2e4d71aef0891f15fa17307307c3c3bc65279a8f75467790cf6ef0480",
+    "cb1bf86241a523e248ad677d83abe83c35f95f90acfe1516691e1942d8658640",
+    "d7211fa17fc2f1eccb9a9264d2e72b5bbd6074ca289375a18642c75a09bd6282",
+    "d7bc86093bd51846a72cb7dd5ef9c79695eb0195143de43f5e6c22ff61cc0d0f",
+    "da5293134e470b3c0fa867da8b769aa10e712634a6d36049e141deb29ee47371",
+    "e15391fe4a130ed1e7f4cac7e2a1e8ab0b5ba165943ff87971a3ebd577264d74",
+    "e3606842a4638ef725a1902de3749ab1d09d6096ab58f73d06e7ef703514e81a",
+    "e91c163a9ec34abbf01131e5ca827f4ed7d573c10560854a1c4fc8b79f6047d5",
+    "ebf2c7f8165438aef8e86de9024c0a9dd939926951914e54f8bac4eedec3cf73",
+    "ee2c76d2a68ba91fc6bc00ea4eb8e34514acc6666f048054d553a8b1dfe429de",
+    "f0e05445faadf7e330e5ba288aecbf7cfc616de9adf9f01936a5cf579c376ec8",
+    "f88d9287ce91592800f536e10ce0d54f8d75a74e2f5d844c79746c4ef5aff44f"
+  ],
+  "tasks": [
+    {
+      "specification": "group-1/specification.json",
+      "approvedCalibrationHash": "162a42dd505b73cee680f2d5a8e5219d2e6ee5c8b0aec6bdffe4223bcaebd827",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    },
+    {
+      "specification": "group-2/specification.json",
+      "approvedCalibrationHash": "aaeb20ea74625bc7af9aa14a91c2a777f2c79c34e9da45edd53118f032aacc23",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    },
+    {
+      "specification": "group-3/specification.json",
+      "approvedCalibrationHash": "61b75489c035aa7f0f7614537790e28a3b401a5bb727521855436346b82ba4d2",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    },
+    {
+      "specification": "group-4/specification.json",
+      "approvedCalibrationHash": "fd3274f3f37bcccd531ae0ffc4f37427a30b34f3215b7b181b75c4a2285a3c4e",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    },
+    {
+      "specification": "group-5/specification.json",
+      "approvedCalibrationHash": "03793b48e0f88c0ea43d61e03510267133f4e18bcd27c88bd00091d11a1fc93a",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    },
+    {
+      "specification": "group-6/specification.json",
+      "approvedCalibrationHash": "100d707c6045d9ce3451ce2e96c733b2c7c706ec7069a007edad84f383ef5989",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    },
+    {
+      "specification": "group-7/specification.json",
+      "approvedCalibrationHash": "050a8878a07fc49b69aa7237f9e790909374b5a90449592abb617127f6eafbaf",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    },
+    {
+      "specification": "group-8/specification.json",
+      "approvedCalibrationHash": "a33b222edddc3dd2113333ccdbf9215c6183a74a8b6562ecf0cb9239aee21fd4",
+      "rules": {
+        "rewardAtoms": "20000000000",
+        "claimSeconds": 1800,
+        "revealSeconds": 3600,
+        "verifySeconds": 7200,
+        "maxAttempts": 2
+      }
+    }
+  ]
+}

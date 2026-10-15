@@ -1,0 +1,106 @@
+{
+  "schema": "flybrainlabs-task-factory-initialization-v4",
+  "programId": "5yxjnH1PSk8iQKfK3ejG4jfSkewkTKfcpJygojdb6sam",
+  "factory": "4uYEL2rErQdAUHGBggZn5dssRs95H2jHeUgXZcvhzzgL",
+  "factoryId": "c7baf1fefe9ac002a648ed029b6fc03e56001294bc67530a1ef7d161351b3930",
+  "catalogRoot": "586813288ec9e8cd332a3f828b776e322a854f87b39f48373a2812ebbfcfa62d",
+  "count": 8,
+  "budgetAtoms": "160000000000",
+  "rewardAtoms": [
+    "20000000000",
+    "20000000000",
+    "20000000000",
+    "20000000000",
+    "20000000000",
+    "20000000000",
+    "20000000000",
+    "20000000000"
+  ],
+  "approvalEvidenceHash": "e243cf7390f681e22743270e9b683c616985d0c5da2f61b8c235aa40be8acf7a",
+  "accountRentQuoteLamports": "103388160",
+  "accountRentCeilingLamports": "250000000",
+  "mode": "--apply",
+  "mainnet": false,
+  "formalIssuance": false,
+  "status": "sealed-paused-awaiting-service-switch",
+  "paused": true,
+  "uploaded": 8,
+  "activeIndex": 4294967295,
+  "nextIndex": 0,
+  "remainingAtoms": "160000000000",
+  "reservedAtoms": "0",
+  "paidAtoms": "0",
+  "receipts": {
+    "initialize-and-pause": {
+      "signature": "2mAVAJbAZrSHtC6SrpvqX8wRgCNijcwPfjJo8tGg8XzbFYJ2pKf8AW8vF5TmqPDo4XYjSC5U8whwveiSUC7NG5Hh",
+      "slot": "511267527",
+      "feeLamports": "5000",
+      "computeUnits": 25580,
+      "commitment": "finalized"
+    },
+    "append-0": {
+      "signature": "jyQqg3vxRzae3s93frfBLaz4tqeoTDjrRQW4GqwZuotceuRyZBv5Lm5FMrEKHnfh5psmTUaMXAh8wTkmJut1N5u",
+      "slot": "511267543",
+      "feeLamports": "5000",
+      "computeUnits": 67757,
+      "commitment": "finalized"
+    },
+    "append-1": {
+      "signature": "3qArveTDctVfDeS1eavcZPsAbKyHLyYyV9w4hoPPQ7X78ucXmnPRDrZL4MGwzfWBMr2cDMNwVHYxW89BMYNiVtvG",
+      "slot": "511267558",
+      "feeLamports": "5000",
+      "computeUnits": 67757,
+      "commitment": "finalized"
+    },
+    "append-2": {
+      "signature": "4VXU7tuXjQM1Sgrst6FwHpa7e1sNq6SD6jYrEP8pgicX8x8aV5ZT1qUtp4t4nH4kK6qWjfXhsaR86BSQmif3dsQ8",
+      "slot": "511267573",
+      "feeLamports": "5000",
+      "computeUnits": 78257,
+      "commitment": "finalized"
+    },
+    "append-3": {
+      "signature": "2qBDTYfstkQuBPvtfGFzqvgeQ9Jz1bfiA375vFqehY5gHU1dx7ceC2riWe6eZ4SFq6Ukr2cTjUKFKxAmLuNzgpcw",
+      "slot": "511267588",
+      "feeLamports": "5000",
+      "computeUnits": 67757,
+      "commitment": "finalized"
+    },
+    "append-4": {
+      "signature": "2jCumybRFiHPVJAD7wEF4NK3auHwGzFZFRur4sXmjbpwTARXX7oKfUHQkFQtsfJf42DHsqJ1H6F1X9qRggJDkmVo",
+      "slot": "511267605",
+      "feeLamports": "5000",
+      "computeUnits": 76757,
+      "commitment": "finalized"
+    },
+    "append-5": {
+      "signature": "5jgq6f5WKQSyyEJfmvuUkyzpKcPzvVvCDMsHRL7LYB4jPbg8yZozX5AkEMG68ZcPsH2KfgiKQtYEjQFYNe4KH3By",
+      "slot": "511267620",
+      "feeLamports": "5000",
+      "computeUnits": 67757,
+      "commitment": "finalized"
+    },
+    "append-6": {
+      "signature": "65JrgKLNshkoUSJp77jo7iDPTfAbPKSN8r59s6zkgv3wTHZLtp42abBjoAFNLmC2G4JsHbrhYkzkBD1jJxSGJvYU",
+      "slot": "511267634",
+      "feeLamports": "5000",
+      "computeUnits": 67757,
+      "commitment": "finalized"
+    },
+    "append-7": {
+      "signature": "5W552WH9W6hv2pfJeJfSUQWzs3KHzJFCmnEbnVSZimJZrnqwNPVDKRnrH2SDgNfEn96B2K2TgixgTshMZqSbh5Lr",
+      "slot": "511267648",
+      "feeLamports": "5000",
+      "computeUnits": 67757,
+      "commitment": "finalized"
+    },
+    "seal": {
+      "signature": "2SJciSNVThWj3AQ4aoQWgDstqcsY8QopCjRxfqhq55Pg9yfWLfYnUPbJcSJt7cxSzCHLsHsYraSeUqLh2A8vD6uu",
+      "slot": "511267663",
+      "feeLamports": "5000",
+      "computeUnits": 8469,
+      "commitment": "finalized"
+    }
+  },
+  "commitment": "finalized"
+}
