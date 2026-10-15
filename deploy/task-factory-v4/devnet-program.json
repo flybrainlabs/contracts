@@ -1,0 +1,55 @@
+{
+  "schema": "flybrainlabs-task-factory-program-deployment-v4",
+  "recordedAtUtc": "2026-10-15T06:23:05.313Z",
+  "status": "devnet-program-upgraded-factory-activation-pending",
+  "cluster": "devnet",
+  "genesisHash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "programId": "5yxjnH1PSk8iQKfK3ejG4jfSkewkTKfcpJygojdb6sam",
+  "programData": "GmTNV9aBMjWeEEsZxBhRAFhahFu2ivUssy1MdHVXam64",
+  "upgradeAuthority": "2EG7CLQ2pXw2XeqtwDPt7e1UDcBfeZQ2rs2ai5EnvUdE",
+  "programSha256": "606eac05dda6210fc6cfa68f677060f3545b44aa8118983a1334c44e261a33e8",
+  "previousProgramSha256": "a42cd5db781b2675ce60e6c215e0e60918114351f5733a8c041174a6f0069b7b",
+  "programBytes": 404944,
+  "programDataBytes": 404989,
+  "deployedSlot": "511257144",
+  "commitment": "finalized",
+  "sbpfArchitecture": "v3",
+  "intendedClusterV3FeatureVerified": true,
+  "reviewedBufferHashVerified": true,
+  "rollbackBinaryRetained": true,
+  "bufferRentReturned": true,
+  "ownedAccountsBefore": 24,
+  "ownedAccountsAfter": 24,
+  "existingAccountDataUnchanged": true,
+  "concurrentlyChangedAccounts": 0,
+  "projectBalanceBeforeLamports": "8068443360",
+  "projectBalanceAfterLamports": "7465067120",
+  "loaderReceipts": {
+    "create-buffer": {
+      "signature": "3eYtN79cdLJ7c4wzjT16foq5H13otzGXtEd8gzcPZNzeTxqbuyS6DhhyyZ59AhnhkZbBGowUxhVABY2Khuwrg2ur",
+      "slot": "511255285",
+      "feeLamports": "10000",
+      "computeUnits": 2520,
+      "commitment": "finalized"
+    },
+    "extend-existing-program": {
+      "signature": "4XktXBWnLLktH5ZerXGohXkd3FBZWCrevy8FHCp7qYSP3hdvu4ac44bPqv5HXrHUEfFDmVNXy3H4EqQCG1dABr5M",
+      "slot": "511257125",
+      "feeLamports": "5000",
+      "computeUnits": 2520,
+      "commitment": "finalized"
+    },
+    "upgrade-reviewed-program": {
+      "signature": "3uwAaGEKbeDm2r9gvToHYqy1h7QsqguJmr87PvXQEiu7xBbNfJzFzxmnDnFnC35YZer8FFTuvUdvcmR4rKKDHGVD",
+      "slot": "511257144",
+      "feeLamports": "5000",
+      "computeUnits": 2370,
+      "commitment": "finalized"
+    }
+  },
+  "publicFactoryEnabled": false,
+  "newPublicTasks": 0,
+  "newPublicFbwBudgetAtoms": "0",
+  "mainnet": false,
+  "formalIssuance": false
+}

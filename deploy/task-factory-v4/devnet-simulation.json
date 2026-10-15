@@ -1,0 +1,15 @@
+{
+  "schema": "flybrainlabs-factory-devnet-simulation-v4",
+  "recordedAtUtc": "2026-10-15T06:25:08.539Z",
+  "simulationOnly": true,
+  "sentTransactions": 0,
+  "ownerBudgetApprovalInferred": false,
+  "programId": "5yxjnH1PSk8iQKfK3ejG4jfSkewkTKfcpJygojdb6sam",
+  "initializeAndAppendPassed": true,
+  "decodedFactoryAndTaskBindingsPassed": true,
+  "originalGlobalUnchanged": true,
+  "proposedFactoryAbsentOnChain": true,
+  "packetBytes": 737,
+  "computeUnits": 83593,
+  "catalogRoot": "52a1cc6e43ee95ca1f9c38280f57b643679dd60c7397b67c35e2b6b47d860eb9"
+}

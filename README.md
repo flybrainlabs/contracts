@@ -90,6 +90,12 @@ Actual extension-wallet and physical-device confirmation remain separate gates.
 
 ## Contract task factory V4
 
+The existing Devnet program now contains V4 at finalized slot `511257144`.
+`deploy/task-factory-v4/devnet-program.json` records the exact executable hash,
+preserved account data and loader receipts. `devnet-simulation.json` records a
+read-only initialization/upload preview. No public factory or new FBW budget has
+been activated; the deployed product UI still uses V3.
+
 The opt-in V4 lifecycle freezes a predefined catalog on chain, accepts full replay
 attestations and advances tasks without a privileged relayer or minimum successful-
 task interval. Existing V3 records and grants are retained. Public activation is
