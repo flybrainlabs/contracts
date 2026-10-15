@@ -1,0 +1,229 @@
+{
+  "schema": "flybrainlabs-task-factory-v4-sbf-acceptance",
+  "passed": true,
+  "environment": "isolated-localnet-scientific-fixtures",
+  "programId": "2wLvd4ywhK2we3Nbkco1j3SjpNcaafGvpSnVPS5NKXF5",
+  "genesisHash": "AeQB2j85jb1avBqdG7F7o1U81qqYYHzc9N4CNbMzM3t8",
+  "checks": [
+    "incomplete catalog cannot seal",
+    "unauthorized caller cannot upload a task",
+    "catalog is immutable after sealing",
+    "ordinary miner starts/retries task activation without an authority or relayer",
+    "changed reveal cannot reuse a genuine commitment",
+    "changed reveal cannot reuse a genuine commitment",
+    "nonadmitted verifier cannot vote",
+    "candidate cannot finalize before quorum",
+    "verifier cannot equivocate",
+    "later valid result cannot bypass earlier live commitment",
+    "ordered threshold acceptance atomically opens the next predefined task without a speed gate",
+    "public payout cannot redirect the fixed beneficiary",
+    "failed token settlement leaves accepted entitlement retryable",
+    "public payment retries exactly once and never blocks task progression",
+    "changed reveal cannot reuse a genuine commitment",
+    "pause stops new task activation",
+    "pause preserves verified entitlements and permissionless resume",
+    "active task cannot expire early",
+    "bounded retries retain the same scientific task and record failure without a reward",
+    "closing returns only unused budget; accepted rewards remain payable"
+  ],
+  "checkCount": 20,
+  "maxPacket": 718,
+  "maxCU": 138409,
+  "transactions": 38,
+  "trace": [
+    {
+      "signature": "5m1ArZ6nkNcFe3g8WLoAX3usHTSDC5LkZ9m5ZW1mAQnFTsUAbYVCtVkZdRG8h8PTkiikr3hTPx9PNJYtPacJ3S15",
+      "bytes": 596,
+      "cu": 64156
+    },
+    {
+      "signature": "uwupKtfCCaZQVxesFq4hdBHkGpojNANuA376BJyfu6r1Kc842H5NeiNsKqGniFWTNJWe6Hq7TaduPkEzcprwdNM",
+      "bytes": 369,
+      "cu": 29321
+    },
+    {
+      "signature": "122EXkDErZrZvzXHVkkP4cSjKp7fBAQxbKmv64hKZs2e8zgoToEMSEVq7awam4yKjDz7bCzoQpSW8HwrnPAfan7t",
+      "bytes": 359,
+      "cu": 17335
+    },
+    {
+      "signature": "22hqdymZDzMN6aQHNKmqrLPQMeZSbLtEsT6maDFmLPDC19NCqD7nNnGo7qEtBSBYhfz4MUffpgsRSqtmxnbvdvMT",
+      "bytes": 718,
+      "cu": 81115
+    },
+    {
+      "signature": "5n4GRcY6eyq1K28Q9RZ87BXNqkhv4fKFW4snBPN1Xh3wyh69xBud6jDAJwiK83DhZSMQ4Nti5aSHu6JRSfMfdkip",
+      "bytes": 718,
+      "cu": 84115
+    },
+    {
+      "signature": "UYwa6MTE3WpuP23ceM5CZCC4w3ayohhrdrUXJky4gSf4fRAiAbKDmhpHvRRgYbNBKJE2xg64Zz7x7Zg2hSn9ACM",
+      "bytes": 718,
+      "cu": 81115
+    },
+    {
+      "signature": "5S2XN1JvcrABhwPsxrKwrS1dRY7WDB5D8qfFA2HRfFuWJ4jzfG5SaCP3hYGrpbkHdZKG3tJVmaJNXBCZnMLdgy2x",
+      "bytes": 209,
+      "cu": 6970
+    },
+    {
+      "signature": "381pCpKEbTdSfW3Q9dWdzFx3PXKbna3gDkzgB5nmtrcStfMp45e6pwzETkSiknmMjcsSxawriLo2YL9MtoXnzFMC",
+      "bytes": 241,
+      "cu": 22108
+    },
+    {
+      "signature": "hoCCMwRfyCsW3NZgKuwHMA6xUPQCkbR78A1kEEKCRfu7NL4TN7NxwQqRaG3hDLzniB3udeaXwTEhUDDawGexhEg",
+      "bytes": 241,
+      "cu": 19334
+    },
+    {
+      "signature": "2PqNUr9LjbcNguxcR5ar1g38G5zPbqdUBdPzt6kA8Y4AzcV16wtH5hXsGN8viG7V7routKznqcxm9A5cXywoQHaW",
+      "bytes": 373,
+      "cu": 36350
+    },
+    {
+      "signature": "5rRbraLDA4z3wkNEtVqLwoDd6crb9yC1bE7B7GDCmsLL67FfVkW78gwTRW3kBSAe3Z8cpbGictgH4sx2j7TR6XyL",
+      "bytes": 373,
+      "cu": 31799
+    },
+    {
+      "signature": "4xKxADZUPCaLNGnfYaL2zRekjvc5nqhATaDAzYdQyRF7zHCTXHX5PFRXVudMHJqff84E9GeNokhrYZJoWFVcy4mz",
+      "bytes": 436,
+      "cu": 75653
+    },
+    {
+      "signature": "5cv8MMKY5MwcBzSjirvCHWUDeGFDoUZ4CbVRLsQU7SgKbDYmPs7uD78akmuG8bhd1NcQyWCoN1YrQYhofyc9Qidd",
+      "bytes": 436,
+      "cu": 74737
+    },
+    {
+      "signature": "4daupNYeV3UYvhTGE5akVn3LPBfZLphETEedxPVMVizJK6WuKxEsky9qxv7SpQHodAdrJvhA3hhv9HZgNBh6qJba",
+      "bytes": 373,
+      "cu": 30338
+    },
+    {
+      "signature": "MqMtVXcmJsaKm5nWnSBX7nf6MX7r3GMjBde7htHMyMtHU53sCcp25apGu73frXVys4TikMvkXywGAyRNGK62Urj",
+      "bytes": 373,
+      "cu": 25669
+    },
+    {
+      "signature": "rSS6UfcbeCem5bQh82CAsYoSS13RHo4n6nzzXirBXUJGDbYxHBDXoftNS4JM8Mpj77P1z67RUPp5vgmQu3hJVEz",
+      "bytes": 436,
+      "cu": 72562
+    },
+    {
+      "signature": "EQHjepK86qWbn7UprgLQaEtnTxwt8nM1TECvsUFyhmT9oboo4u1Dtrg21vsbsoApMoCycJYLSH4cNnq7tN4qjxZ",
+      "bytes": 436,
+      "cu": 71607
+    },
+    {
+      "signature": "3XnVqekh575XWicj5fZZUsJSdmuMT8cKEJraDULco1baggb4z5SP9KqLY7pzREUAT3JyTVxws3QAya6kEy9uYbMW",
+      "bytes": 556,
+      "cu": 134483
+    },
+    {
+      "signature": "4WR6czuFKsMXW5edWJiMoQA4ezB5iY8NMcgEqA2cfoFwWD9vHhEKHpC236X3jQUvKGiczVjZpst43LxMwBFmH326",
+      "bytes": 556,
+      "cu": 133237
+    },
+    {
+      "signature": "2oqTdVEbz1dJqzmezEGuKoLoAeUQru5xTWibbVgVG6dLz5CXDnosUDRfvZ8jUR8DZx6fFR9Nuks4sniGebJfiJ1x",
+      "bytes": 556,
+      "cu": 134495
+    },
+    {
+      "signature": "3wn5DgMfqEn48mXPVTkz6ui7TU3rwYcecHxwJgUQTqvqfxgBLYjEY5y8F5refxTTnL2c5RCzDYPAvR6Aa6cmRz52",
+      "bytes": 556,
+      "cu": 137478
+    },
+    {
+      "signature": "rj2EvSgV3pE6kesAcoVvxyU9oAQZwgg5k9fsCB6yZjFCiV1kWan5R26Sa7oFbDfsvwDfrgUsJxZ5PsZvVpfamZn",
+      "bytes": 556,
+      "cu": 137484
+    },
+    {
+      "signature": "2nWTLVk9vXFo3dtwxhJJPPBNYFTb6JPkBka7zKZB8PYmNCs7rneJD5RTxuwkJ89LmTz5SUozRXP1AQSL7bz9cfGq",
+      "bytes": 307,
+      "cu": 42273
+    },
+    {
+      "signature": "2vdR6bMfVHM38fUWruAS9HmJmWKd4w3UcHb9o55WQD3u5BD6x3W6E3Xiiqo5s7NKd5gYw1qRsnXT42HGZEZUC3Tt",
+      "bytes": 406,
+      "cu": 43118
+    },
+    {
+      "signature": "3cpRuu2r3aQ8FJfwsW7hCFwopxzZYXL7tdarFjQuzjE81hAwECzEJdnW9xrkPzkajqK3hsUpivW54XYpGx4JW2UC",
+      "bytes": 406,
+      "cu": 35903
+    },
+    {
+      "signature": "5xz4k4pf9Q2nDXdJeh3q3nrX8HyqQrP1tsqrKNvBxwugKRhQbEMp4dYuK7ghBJRWyKmnvyUy5V8TAbtdBpUckkBx",
+      "bytes": 373,
+      "cu": 34850
+    },
+    {
+      "signature": "3pyVkm4qTH6YCnREyZ4K6HsbiBHvA1HHHnEzrrePcfSbXyCjSYi5j7ppyDcnDvfsvGkrUtodyde2BPAuYwxRuB3p",
+      "bytes": 373,
+      "cu": 30299
+    },
+    {
+      "signature": "4wurtkUG7tDiooFRtpJFp115B5ur41JntsyhxSZ6bw7EsDHpWKscf56WzfEU8rtMuD14f75ViCVuxuHFh1MNnkvf",
+      "bytes": 436,
+      "cu": 75653
+    },
+    {
+      "signature": "63NYzKSJuSGfsM2k8ei9dUu9z5waWu7HHArBFLEPpiGtiGVqAbRtZQG2WjvuhxV2AVzzmCmwQem7purjvitXMYYB",
+      "bytes": 436,
+      "cu": 74737
+    },
+    {
+      "signature": "2Zc4ErMPR4mVpittYj3xkL5biKqDEM4Xe1yWhpNPEqo3jp4SEuu6ZW8Jgd4Ps8cjioeES13dGxG1CS2k5GHko2Kn",
+      "bytes": 210,
+      "cu": 6745
+    },
+    {
+      "signature": "31aJvG6nuiwJStcs2WM4FAZHt7u2xvDJ1vhGmYMFDTA5kPwx4Dey7YornFaYTNaLM5mUkNqrgp7nn9mC5kg8S69K",
+      "bytes": 556,
+      "cu": 137563
+    },
+    {
+      "signature": "Z66GCGfFfbsqLKB1vPBdVqhaGJn7e9SYPZLCJdKUT6itqBCKivA9Di2Ny1QRphgYLHGJSJxQx7UMGGMXg8f6bqU",
+      "bytes": 556,
+      "cu": 138409
+    },
+    {
+      "signature": "4HEFXx4CSsgwQag7M7Zjuy4Y76nj1rqHPRbE7pK5TvnHDR88bspbSifrQbUTmeVxYibpxYJZpBY19sef928PKjKx",
+      "bytes": 210,
+      "cu": 6744
+    },
+    {
+      "signature": "22f4uBMTJxZZWSXabBHW43xABw6QJ9Lb7kRApM1vrtD59SFD2ZZnD5Zr6iExmaZNPMHf5ZuBQFrPZ3x28s9uwsBB",
+      "bytes": 241,
+      "cu": 22109
+    },
+    {
+      "signature": "2UwCt3NxoAuRHELzP98qrevCb2B78AJxh8aNH81UVKsoRAShyx72vm5GiMfQmn6Ht2eQ5L49a8jMkYXRDv5VBfxd",
+      "bytes": 241,
+      "cu": 20348
+    },
+    {
+      "signature": "5p4vhYkTYaXwwLAvcH5PKFaYof6uJyBX1q7gkdXiwLiWWHVdg15MDbJaZMxxY1WdwJaw3o5GLmxyCGCEvqxz4Qq5",
+      "bytes": 241,
+      "cu": 20323
+    },
+    {
+      "signature": "4gJWkjBULvsgKAE6D2nNyzH8cuSFR1mdYSYNNaByHF37SuonPxFaAqxuRDPWXmjf2ffUQkaNNDArKnWX3A5tKnXf",
+      "bytes": 242,
+      "cu": 13484
+    },
+    {
+      "signature": "2v95Fgmo99vjyiTLKQ8zPsbxPrfYxfP9q1YQPoJdw3KhocxBDTaa552zuNF1ugQjD2uaGdpgtL59Sd5Lo7jMEkkw",
+      "bytes": 406,
+      "cu": 46118
+    }
+  ],
+  "publicChainTransactions": 0,
+  "productionFunds": false,
+  "completeModelScientificAcceptance": false,
+  "independentOperators": false
+}

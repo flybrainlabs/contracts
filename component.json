@@ -35,7 +35,10 @@
     "deploy/wallet-mining-v3/task-supply-20261013/frozen-plan.json": "deploy/wallet-mining-v3/task-supply-20261013/frozen-plan.json",
     "deploy/wallet-mining-v3/task-supply-20261013/initialization.json": "deploy/wallet-mining-v3/task-supply-20261013/initialization.json",
     "deploy/wallet-mining-v3/task-supply-20261013/future-scientific-plan.json": "deploy/wallet-mining-v3/task-supply-20261013/future-scientific-plan.json",
-    "deploy/wallet-mining-v3/task-supply-20261013/plan-receipt.json": "deploy/wallet-mining-v3/task-supply-20261013/plan-receipt.json"
+    "deploy/wallet-mining-v3/task-supply-20261013/plan-receipt.json": "deploy/wallet-mining-v3/task-supply-20261013/plan-receipt.json",
+    "programs/flypow-economy-v2/src/task_factory_v4.rs": "programs/flypow-economy-v2/src/task_factory_v4.rs",
+    "tests/task_factory_v4_localnet.mjs": "tests/task_factory_v4_localnet.mjs",
+    "deploy/task-factory-v4/local-sbf-acceptance.json": "deploy/task-factory-v4/local-sbf-acceptance.json"
   },
   "project": "flybrainlabs"
 }
