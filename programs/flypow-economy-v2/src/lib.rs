@@ -9,6 +9,7 @@ use spl_token::state::{Mint,Account as Token};
 type Key=[u8;32];
 mod mining_v3;
 mod task_factory_v4;
+mod scientific_round_v5;
 #[derive(BorshSerialize,BorshDeserialize,Clone)]pub struct Global {pub authority:Key,pub network:Key,pub policy:Key,pub settlers:[Key;3],pub mint:Key,pub issued:bool,pub available:[u64;3]}
 #[derive(BorshSerialize,BorshDeserialize,Clone)]pub struct LegacyStage {pub id:Key,pub policy:Key,pub pool:u8,pub budget:u64,pub remaining:u64,pub deadline:i64,pub closed:bool}
 #[derive(BorshSerialize,BorshDeserialize,Clone)]pub struct Stage {pub id:Key,pub policy:Key,pub pool:u8,pub budget:u64,pub remaining:u64,pub deadline:i64,pub closed:bool,pub unaccepted_count:u64,pub unaccepted_atoms:u64}
@@ -27,6 +28,7 @@ mod task_factory_v4;
     MigrateStage, // tag 9: admin supplies the complete non-released slot inventory.
     MiningV3{data:Vec<u8>}, // tag 10: versioned funded discovery; old layouts stay intact.
     TaskFactoryV4{data:Vec<u8>}, // tag 11: frozen catalog and permissionless advancement.
+    ScientificRoundV5{data:Vec<u8>}, // tag 12: separate funded, challenged scientific rounds.
 
 }
 #[cfg(not(feature="no-entrypoint"))]solana_program::entrypoint!(process_instruction);
@@ -79,6 +81,7 @@ pub fn process_instruction(p:&Pubkey,a:&[AccountInfo],data:&[u8])->ProgramResult
     match instruction {
         Instruction::MiningV3{data}=>mining_v3::process(p,a,&data),
         Instruction::TaskFactoryV4{data}=>task_factory_v4::process(p,a,&data),
+        Instruction::ScientificRoundV5{data}=>scientific_round_v5::process(p,a,&data),
         Instruction::Init{network,policy,settlers}=>{
             require(a.len()==9&&network!=[0;32]&&policy!=[0;32]&&settlers.iter().all(|k|*k!=[0;32])&&settlers[0]!=settlers[1]&&settlers[0]!=settlers[2]&&settlers[1]!=settlers[2])?;
             let (ga,ma,payer,sy,ta)=(&a[0],&a[1],&a[5],&a[6],&a[7]);require(*ta.key==spl_token::ID)?;initializer(p,payer,&a[8])?;

@@ -101,3 +101,14 @@ attestations and advances tasks without a privileged relayer or minimum successf
 task interval. Existing V3 records and grants are retained. Public activation is
 pending an approved calibrated catalog and finite funding. See
 [the lifecycle specification](https://github.com/flybrainlabs/docs/blob/feat/contract-task-factory-v4-20261015/docs/CONTRACT_TASK_FACTORY_V4.md).
+
+## Scientific round V5 acceptance
+
+The economic program appends instruction tag 12 and disjoint V5 accounts; previous
+account layouts and instruction tags are retained. After building the program and
+`exact_trial`, run `node tests/scientific_round_v5_sbf.mjs` in the assembled workspace.
+Set `FLYBRAIN_POOL_TEST_SOCKET` to the dedicated isolated acceptance socket for the
+HTTP/PostgreSQL/restart path. `SCIENCE_V5_NODE_BUNDLE` optionally checks the actual
+self-contained maintenance package. These tests use real SBF, deterministic fixture
+computation and virtual SPL funds. They never send public transactions or assert
+biological validity. Reject SBF builds containing stack errors, even on exit zero.

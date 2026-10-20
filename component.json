@@ -61,7 +61,9 @@
     "deploy/task-factory-v4/approved-200fbw/compiled/content/0c522a69013a09218e07ea0e9fa2351694312fc2e0bcb303e19d8667602d7e54.bin": "deploy/task-factory-v4/approved-200fbw/compiled/content/0c522a69013a09218e07ea0e9fa2351694312fc2e0bcb303e19d8667602d7e54.bin",
     "deploy/task-factory-v4/approved-200fbw/compiled/content/f8452cbe17468245459fa4c079a6af40324f0f932c1868ffaf4f4e0d3e1e0b6e.bin": "deploy/task-factory-v4/approved-200fbw/compiled/content/f8452cbe17468245459fa4c079a6af40324f0f932c1868ffaf4f4e0d3e1e0b6e.bin",
     "deploy/task-factory-v4/devnet-catalog-registration.json": "deploy/task-factory-v4/devnet-catalog-registration.json",
-    "deploy/task-factory-v4/devnet-catalog-activation.json": "deploy/task-factory-v4/devnet-catalog-activation.json"
+    "deploy/task-factory-v4/devnet-catalog-activation.json": "deploy/task-factory-v4/devnet-catalog-activation.json",
+    "programs/flypow-economy-v2/src/scientific_round_v5.rs": "programs/flypow-economy-v2/src/scientific_round_v5.rs",
+    "tests/scientific_round_v5_sbf.mjs": "tests/scientific_round_v5_sbf.mjs"
   },
   "project": "flybrainlabs"
 }
