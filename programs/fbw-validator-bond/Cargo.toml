@@ -1,0 +1,25 @@
+[package]
+name = "fbw-validator-bond"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+
+[dependencies]
+solana-program = "=3.0.0"
+solana-system-interface = { version = "=2.0.0", features = ["bincode"] }
+spl-token = { version = "=9.0.0", features = ["no-entrypoint"] }
+borsh = { version = "=1.8.1", features = ["derive"] }
+
+[profile.release]
+overflow-checks = true
+lto = true
+codegen-units = 1
+

@@ -63,7 +63,12 @@
     "deploy/task-factory-v4/devnet-catalog-registration.json": "deploy/task-factory-v4/devnet-catalog-registration.json",
     "deploy/task-factory-v4/devnet-catalog-activation.json": "deploy/task-factory-v4/devnet-catalog-activation.json",
     "programs/flypow-economy-v2/src/scientific_round_v5.rs": "programs/flypow-economy-v2/src/scientific_round_v5.rs",
-    "tests/scientific_round_v5_sbf.mjs": "tests/scientific_round_v5_sbf.mjs"
+    "tests/scientific_round_v5_sbf.mjs": "tests/scientific_round_v5_sbf.mjs",
+    "programs/fbw-validator-bond/Cargo.toml": "programs/fbw-validator-bond/Cargo.toml",
+    "programs/fbw-validator-bond/src/lib.rs": "programs/fbw-validator-bond/src/lib.rs",
+    "tests/validator_bond_sbf.mjs": "tests/validator_bond_sbf.mjs",
+    "programs/fbw-validator-bond/Cargo.lock": "programs/fbw-validator-bond/Cargo.lock",
+    "programs/fbw-validator-bond/README.md": "programs/fbw-validator-bond/README.md"
   },
   "project": "flybrainlabs"
 }
